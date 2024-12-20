@@ -9,105 +9,14 @@ public:
         this->next = NULL;
     }
 };
-
 class LinkedList{
 public:
-    Node* head;
-    Node* tail;
-    int size;
-    LinkedList(){
-        head = tail = NULL;
-        size = 0;
-    }
-    int getIdx(int idx){
-        if(size==0){
-            cout<<"List is empty!!";
-            return -1;
-        }
-        else if(idx>=size || idx<0){
-            cout<<"Invalid Index!!";
-            return -1;
-        }
-        else{
-            Node* temp = head;
-            for(int i=0; i<idx; i++) temp = temp->next;
-            return temp->val;
-        }
-        return 0;
-    }
-    void insertAtEnd(int val){
-        Node* temp = new Node(val);
-        if(size==0) head = tail = temp;
-        else {
-            tail->next = temp;
-            tail = temp;
-        }
-        size++;
-    }
-    void insertAtBeginning(int val){
-        Node* temp = new Node(val);
-        if(size==0) head = tail = temp;
-        else {
-            temp->next = head;
-            head = temp;
-        }
-        size++;
-    }
-    void insertAtIdx(int idx, int val){
-        if(idx>size || idx<0){
-            cout<<"Invalid Index!!"<<endl;
-            return;
-        }
-        else if(idx==0) insertAtBeginning(val);
-        else if(idx==size) insertAtEnd(val);
-        else{
-            Node* t = new Node(val);
-            Node* temp = head;
-            for(int i=0; i<idx-1; i++) temp = temp->next;
-            t->next = temp->next;
-            temp->next = t;
-            size++;
-        }
-    }
-    void deleteAtBeginning(){
-        if(size==0){
-            cout<<"List is Empty!!";
-            return;
-        }
-        head = head->next;
-        size--;
-    }
-    void deleteAtEnd(){
-        if(size==0){
-            cout<<"List is Empty!!";
-            return;
-        }
-        else{
-            Node* temp = head;
-            while(temp->next->next!=NULL) temp = temp->next;
-            // while(temp->next!=tail) temp = temp->next;
-            temp->next = NULL;
-            tail = temp;
-            size--;
-        }
-    }
-    void deleteAtIdx(int idx){
-        if(idx>=size || idx<0){
-            cout<<"Invalid Index!!";
-            return;
-        }
-        else if(idx==0) deleteAtBeginning();
-        else if(idx==size-1) deleteAtEnd();
-        else{
-            Node* temp = head;
-            for(int i=0; i<idx-1; i++) temp = temp->next;
-            temp->next = temp->next->next;
-            size--;
-        }
-    }
+    Node* head = NULL;
+    Node* tail = NULL;
+    int size = 0;
     void display(){
         if(size==0){
-            cout<<"List is Empty!!";
+            cout<<"List is empty!!";
             return;
         }
         else{
@@ -119,8 +28,73 @@ public:
         }
         cout<<endl;
     }
+    int getIdx(int idx){
+        if(idx>=size){
+            cout<<"Invalid Index!!";
+            return -1;
+        }
+        Node* temp = head;
+        for(int i=1; i<=idx; i++) temp = temp->next;
+        return temp->val;
+    }
+    void insertAtEnd(int val){
+        Node* temp = new Node(val);
+        if(size==0) head = tail = temp;
+        else{
+            tail->next = temp;
+            tail = temp;
+        }
+        size++;
+    }
+    void insertAtBeginning(int val){
+        Node* temp = new Node(val);
+        if(size==0) head = tail = temp;
+        else{
+            temp->next = head;
+            head = temp;
+        }
+        size++;
+    }
+    void insertAtIdx(int idx, int val){
+        if(idx<0 && idx>size){
+            cout<<"Invalid Index!!";
+            return;
+        }
+        else if(size==0) insertAtBeginning(val);
+        else if(idx==size) insertAtEnd(val);
+        else{
+            Node* temp = new Node(val);
+            Node* t = head;
+            for(int i=1; i<=idx-1; i++) t = t->next;
+            temp->next = t->next;
+            t->next = temp; 
+            size++;
+        }
+    }
+    void deleteAtIdx(int idx){
+        if(size==0){
+            cout<<"List is empty!!";
+            return;
+        }
+        else if(idx<0 && idx>=size){
+            cout<<"Invalid Index!!";
+            return;
+        }
+        else if(idx==0) head = head->next;
+        else if(idx==size-1){
+            Node* temp = head;
+            while(temp->next!=tail) temp = temp->next;
+            temp->next = NULL;
+            tail = temp;
+        }
+        else{
+            Node* temp = head;
+            for(int i=1; i<=idx-1; i++) temp = temp->next;
+            temp->next = temp->next->next;
+        }
+        size--;
+    }
 };
-
 int main(){
     LinkedList ll;
     ll.insertAtEnd(20);
