@@ -21,7 +21,7 @@ class Student{
 
 void change(Student* s3){
     s3->name = "Yash Kate";
-    s3->branch = "IT"l
+    s3->branch = "IT";
     s3->prn = 12211678;
 }
 
