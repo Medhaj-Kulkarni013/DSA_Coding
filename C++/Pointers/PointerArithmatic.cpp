@@ -4,7 +4,7 @@ int main(){
     // int x = 9;
     // int *ptr = &x;
     // cout<<ptr<<endl; // 0x61ff08
-    // cout<<*ptr<<endl; // 4 value of x
+    // cout<<*ptr<<endl; // 4 i.e value of x
     // ptr = ptr + 1;  // address moved by 4 bytes
     // cout<<ptr<<endl; // 0x61ff0c
     // cout<<*ptr<<endl; // garbage value 6422284
