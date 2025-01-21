@@ -29,5 +29,6 @@ int maze2(int row ,int col){
 int main(){
     // cout<<maze(1,1,3,3);
     // mazePath(1,1,3,3,"");
-    cout<<maze2(3,3);
+    cout<<maze2(4,4);
+    mazePath(1,1,3,3,"");
 }
