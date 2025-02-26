@@ -3,7 +3,7 @@
 using namespace std;
 class Student{
 public:
-    // all the attributes
+    // all the data members
     int roll;
     string name;
     float sgpa, cgpa;
