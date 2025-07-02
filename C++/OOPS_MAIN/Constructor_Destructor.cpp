@@ -39,8 +39,8 @@ public :
     }
 };
 int main(){
-    Student s1 = Student(12211456, "Medhaj Kulkarni", 8.74);
-    Student s2(12211667, "Prateek Buthale", 8.75);
+    Student s1 = Student(12211456, "Medhaj Kulkarni", 8.74); // envokes copy and parameterized both constructors
+    Student s2(12211667, "Prateek Buthale", 8.75); // envokes only parameterized
     if(true){
         Student s3 = Student(12211453, "Pratham Gadkari", 9.25);
         cout<<s3.getPrn()<<" "<<s3.getName()<<" "<<s3.getCgpa()<<endl;
