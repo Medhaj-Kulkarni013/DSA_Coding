@@ -32,7 +32,7 @@ To build a strong base in DSA by implementing all essential algorithms and data 
 
 ## 🏁 Getting Started
 
-1. Clone the repo:
+To Clone the repo:
    ```bash
    git clone https://github.com/Medhaj-Kulkarni013/DSA_Coding
 
