@@ -32,13 +32,7 @@ public :
         return *cgpa;
     }
 };
-class Student2{
-private : 
-    string name;
-    double* cgpa;
-publci :
-    Student
-};
+
 int main(){
     // Student s1 = Student("Medhaj Kulkarni", 8.74); this declaration actually envokes parameterized and 
     // copy both constructors so if you do this make sure your copy has 'const'. 
