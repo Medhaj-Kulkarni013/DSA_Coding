@@ -25,9 +25,9 @@ int main(){
     cout<<d.val<<" ";
     cout<<endl;
     cout<<a.val<<" ";
-    cout<<a.next->val<<" "; // cout<<*(a.next).val<<" ";
-    cout<<a.next->next->val<<" "; // cout<<(*((*(a.next)).next)).val<<" ";
-    cout<<a.next->next->next->val<<" "; // cout<<(*((*((*(a.next)).next)).next)).val<<" ";
+    cout<<a.next->val<<" "; // cout<<(*a.next).val<<" ";
+    cout<<a.next->next->val<<" "; // cout<<(*(*a.next).next).val<<" ";
+    cout<<a.next->next->next->val<<" "; // cout<<(*(*(*a.next).next).next).val<<" ";
 
     //using while loop
     cout<<endl;
