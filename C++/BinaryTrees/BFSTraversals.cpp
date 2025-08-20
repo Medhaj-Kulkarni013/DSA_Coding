@@ -41,8 +41,8 @@ void nthLevelRev(TreeNode* root, int curr, int level){
         cout<<root->val<<" ";
         return; // save time complexity by not traversing further below
     }
-    nthLevel(root->right,curr+1,level);
-    nthLevel(root->left,curr+1,level);
+    nthLevelRev(root->right,curr+1,level);
+    nthLevelRev(root->left,curr+1,level);
 }
 
 void nthLevel(TreeNode* root, int curr, int level){
@@ -66,6 +66,21 @@ void levelOrder(TreeNode* root){
     for(int i=1; i<=n; i++){
         nthLevel(root,1,i);
     }
+}
+
+void BFS(TreeNode* root){
+    if(root==NULL) return;
+    queue<TreeNode*> q;
+    q.push(root);
+    while(!q.empty()){
+        TreeNode* temp = q.front();
+        q.pop();
+        cout<<temp->val<<" ";
+
+        if(temp->left) q.push(temp->left);  // to print from right->left i.e reverse just interchange these
+        if(temp->right) q.push(temp->right); // two lines.
+    }
+    cout<<endl;
 }
 
 int main(){
@@ -92,5 +107,9 @@ int main(){
     cout<<endl;
     nthLevel(a,1,3);
     cout<<endl;
+    nthLevelRev(a,1,3);
+    cout<<endl;
     levelOrder(a);
+    cout<<endl;
+    BFS(a);
 }
