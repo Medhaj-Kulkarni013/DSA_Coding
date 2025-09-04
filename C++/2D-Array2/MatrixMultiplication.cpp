@@ -17,7 +17,6 @@ int main(){
         cout<<"Multiplication cannot happen as m is not equal to p";
         return 0;
     }
-    else{
     int arr[n][m];
     int brr[p][q];
     cout<<"Enter the elements in 1st Matrix : "<<endl;
@@ -39,11 +38,11 @@ int main(){
         for(int j=0; j<q; j++){
             res[i][j] = 0;
            for(int r=0; r<m; r++){
-                    res[i][j] += arr[i][r]*brr[r][j];
-                }    
-           }
+                res[i][j] += arr[i][r]*brr[r][j];
+            }    
         }
     }
+    
     // Printing resultant matrix
     cout<<"The resultant multiplied matrix is : "<<endl;
     for(int i=0; i<n; i++){
