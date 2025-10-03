@@ -13,10 +13,12 @@ public :
         this->prn = prn;
         this->name = name;
         this->cgpa = cgpa;
+
+        cout<<"Contructor Constructs!!! "<<name<<endl;
     }
     // Destructor
     ~Student(){
-        cout<<"Destructor Destroyss!!!"<<endl;
+        cout<<"Destructor Destroyss!!! "<<name<<endl;
     }
     // Setters are present incase constructor is not used
     void setPrn(int prn){ 
@@ -43,9 +45,9 @@ int main(){
     Student s2(12211667, "Prateek Buthale", 8.75); // envokes only parameterized
     if(true){
         Student s3 = Student(12211453, "Pratham Gadkari", 9.25);
-        cout<<s3.getPrn()<<" "<<s3.getName()<<" "<<s3.getCgpa()<<endl;
+        // cout<<s3.getPrn()<<" "<<s3.getName()<<" "<<s3.getCgpa()<<endl;
     }
     // Destructor will first destroy s3 as it gets out of scope before s1 and s2
-    cout<<s2.getPrn()<<" "<<s2.getName()<<" "<<s2.getCgpa()<<endl;
-    cout<<s1.getPrn()<<" "<<s1.getName()<<" "<<s1.getCgpa()<<endl;
+    // cout<<s2.getPrn()<<" "<<s2.getName()<<" "<<s2.getCgpa()<<endl;
+    // cout<<s1.getPrn()<<" "<<s1.getName()<<" "<<s1.getCgpa()<<endl;
 }

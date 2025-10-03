@@ -1,0 +1,1 @@
+Student s1("Medhaj Kulkarni", 8.74);
